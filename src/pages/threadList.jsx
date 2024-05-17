@@ -1,6 +1,5 @@
 //import記述用
 import { ThreadListView } from "../components/threadListView";
-import { useState } from "react";
 
 export const ThreadList = () => {
   return (

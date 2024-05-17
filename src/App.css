@@ -8,3 +8,7 @@ header {
   color: #ffffff;
   display: flex;
 }
+
+#title {
+  padding: 20px;
+}

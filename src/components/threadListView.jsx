@@ -3,10 +3,22 @@ import { ThreadListApi } from "../api/threadListApi";
 import { useEffect, useState } from "react";
 
 export const ThreadListView = () => {
-  const [res, setRes] = useState();
+  const [threadData, setThreadData] = useState([]);
   useEffect(() => {
-    setRes(ThreadListApi());
+    ThreadListApi().then((response) => {
+      setThreadData(response);
+    });
   }, []);
 
-  console.log(res);
+  console.log(threadData);
+
+  return (
+    <div>
+      {threadData.map((item) => (
+        <div name="thread" key={item.id}>
+          <p id={item.id}>{item.title}</p>
+        </div>
+      ))}
+    </div>
+  );
 };
