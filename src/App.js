@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+//コンポーネントimport
+import { ThreadList } from "./pages/threadList";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <nav className="title">
+          <ul>
+            <li>
+              <h1>掲示板</h1>
+            </li>
+            <li>
+              <button id="postThread">スレッドをたてる</button>
+            </li>
+          </ul>
+        </nav>
       </header>
+      <ThreadList />
     </div>
   );
 }
