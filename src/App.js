@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 
 //コンポーネントimport
@@ -8,10 +7,16 @@ function App() {
   return (
     <div className="App">
       <header>
-        <div className="title">
-          <h1>掲示板</h1>
-          <button>スレッドをたてる</button>
-        </div>
+        <nav className="title">
+          <ul>
+            <li>
+              <h1>掲示板</h1>
+            </li>
+            <li>
+              <button id="postThread">スレッドをたてる</button>
+            </li>
+          </ul>
+        </nav>
       </header>
       <ThreadList />
     </div>

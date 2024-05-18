@@ -3,12 +3,39 @@
 }
 
 header {
+  height: 80px;
   background-color: #66d48b;
-  padding: 20px;
   color: #ffffff;
-  display: flex;
 }
 
-#title {
-  padding: 20px;
+nav {
+  height: 80px;
+}
+nav ul {
+  height: 80px;
+  padding: 0 20px;
+  margin: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 25px;
+}
+
+li {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+li h1 {
+  margin: 0;
+  font-size: 32px;
+  margin: auto auto auto 0;
+}
+
+button#postThread {
+  background: transparent;
+  border: none;
+  margin: auto 0 auto auto;
+  color: #ffffff;
 }

@@ -13,9 +13,9 @@ export const ThreadListView = () => {
   console.log(threadData);
 
   return (
-    <div>
+    <div className="threadList">
       {threadData.map((item) => (
-        <div name="thread" key={item.id}>
+        <div className="thread" key={item.id}>
           <p id={item.id}>{item.title}</p>
         </div>
       ))}
