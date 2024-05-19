@@ -1,0 +1,9 @@
+.createThreadPage {
+  text-align: center;
+}
+
+input {
+  height: 32px;
+  font-size: 28px;
+  margin: 10px;
+}

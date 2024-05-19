@@ -27,15 +27,19 @@ li {
   align-items: center;
 }
 
-li h1 {
+#postThread,
+#home {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+}
+
+#home h1 {
   margin: 0;
   font-size: 32px;
   margin: auto auto auto 0;
 }
 
-button#postThread {
-  background: transparent;
-  border: none;
+#postThread {
   margin: auto 0 auto auto;
-  color: #ffffff;
 }
