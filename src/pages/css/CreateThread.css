@@ -1,0 +1,27 @@
+.createThreadPage {
+  text-align: center;
+}
+
+input {
+  height: 32px;
+  font-size: 28px;
+  margin: 10px;
+}
+
+#newThread {
+  background-color: #66d48b;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 24px;
+  padding: 5px;
+  margin: 2px;
+}
+
+#backHome {
+  background-color: #669fd4;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 24px;
+  padding: 5px;
+  margin: 2px;
+}

@@ -1,11 +1,11 @@
 //import記述用
-import { ThreadListApi } from "../api/threadListApi";
+import { GetThreadList } from "../api/GetThreadList";
 import { useEffect, useState } from "react";
 
 export const ThreadListView = () => {
   const [threadData, setThreadData] = useState([]);
   useEffect(() => {
-    ThreadListApi().then((response) => {
+    GetThreadList().then((response) => {
       setThreadData(response);
     });
   }, []);
