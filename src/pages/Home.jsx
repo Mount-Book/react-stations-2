@@ -6,8 +6,10 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 export const Home = () => {
-  const page_num = useParams() ?? 0;
-  console.log(page_num);
+  const [page, setPage] = useState(useParams().page_num ?? 0);
+  console.log(isNaN(page));
+  if (isNaN(page)) setPage(0);
+  console.log(page);
   const nav = useNavigate();
 
   return (
@@ -15,12 +17,12 @@ export const Home = () => {
       <Header />
       <h1>新着スレッド</h1>
       <div>
-        <ThreadListView offset={page_num} />
+        <ThreadListView offset={page} />
       </div>
       <button
         id="nextPage"
         onClick={() => {
-          nav(`/?page=${page_num + 1}`);
+          nav(`/${Number(page) + 1}`);
         }}
       >
         次へ
