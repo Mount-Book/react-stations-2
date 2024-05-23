@@ -10,7 +10,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path={"/"} element={<Home />} />
-          <Route path={"/:page_num"} element={<Home />} />
           <Route path={"/threads/new"} element={<CreateThread />} />
           <Route path={"/threads/:thread_id"} element={<Thread />} />
         </Routes>
