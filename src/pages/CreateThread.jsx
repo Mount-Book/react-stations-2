@@ -31,6 +31,7 @@ export const CreateThread = () => {
           onClick={() => {
             if (title) {
               PostNewThread(title);
+              nav("/");
             }
           }}
         >

@@ -5,10 +5,11 @@ import { useEffect, useState } from "react";
 import { PostThreadPost } from "../api/PostThreadPost";
 import "./css/Thread.css";
 
-export const Thread = () => {
+export const Thread = (prop) => {
   const threadId = useParams().thread_id;
   const [postList, setPostList] = useState([]);
   const [post, setPost] = useState();
+
   useEffect(() => {
     GetThreadPosts(threadId).then((data) => {
       setPostList(data.posts);
@@ -26,8 +27,11 @@ export const Thread = () => {
       ></input>
       <button
         id="postButton"
-        onClick={() => {
-          PostThreadPost({ threadId: threadId, post: post });
+        onClick={async () => {
+          await PostThreadPost({ threadId: threadId, post: post });
+          GetThreadPosts(threadId).then((data) => {
+            setPostList(data.posts);
+          });
         }}
       >
         投稿
