@@ -28,9 +28,9 @@ export const CreateThread = () => {
         </button>
         <button
           id="newThread"
-          onClick={() => {
+          onClick={async () => {
             if (title) {
-              PostNewThread(title);
+              await PostNewThread(title);
               nav("/");
             }
           }}

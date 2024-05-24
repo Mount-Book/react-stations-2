@@ -1,14 +1,19 @@
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { Header } from "../components/Header";
 import { GetThreadPosts } from "../api/GetThreadPosts";
 import { useEffect, useState } from "react";
 import { PostThreadPost } from "../api/PostThreadPost";
 import "./css/Thread.css";
 
-export const Thread = (prop) => {
+export const Thread = () => {
   const threadId = useParams().thread_id;
+  const location = useLocation();
   const [postList, setPostList] = useState([]);
   const [post, setPost] = useState();
+  const title = location.state.title;
+
+  console.log(location);
+  console.log(title);
 
   useEffect(() => {
     GetThreadPosts(threadId).then((data) => {
@@ -16,19 +21,25 @@ export const Thread = (prop) => {
     });
   }, [threadId]);
 
+  const onChangeText = (e) => {
+    setPost(e.target.value);
+  };
+
   return (
     <>
       <Header />
-      <h1>ここにタイトルが入る</h1>
+      <h1>{title}</h1>
       <input
         placeholder="投稿しよう！"
         type="text"
-        onChange={(event) => setPost(event.target.value)}
+        value={post}
+        onChange={onChangeText}
       ></input>
       <button
         id="postButton"
         onClick={async () => {
           await PostThreadPost({ threadId: threadId, post: post });
+          setPost("");
           GetThreadPosts(threadId).then((data) => {
             setPostList(data.posts);
           });

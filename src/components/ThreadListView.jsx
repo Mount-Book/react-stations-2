@@ -21,7 +21,7 @@ export const ThreadListView = () => {
             <button
               className="threadButton"
               onClick={() => {
-                nav(`/threads/${item.id}`, { title: item.title });
+                nav(`/threads/${item.id}`, { state: { title: item.title } });
               }}
             >
               <p id={item.id}>{item.title}</p>
@@ -30,24 +30,30 @@ export const ThreadListView = () => {
         ))}
       </div>
       <div className="pageButton">
-        <button
-          id="prevButton"
-          className={page >= 1 ? "open" : "close"}
-          onClick={() => {
-            setPage(Number(page) - 1);
-          }}
-        >
-          前へ
-        </button>
-        <p id="pageNum">{page}</p>
-        <button
-          id="nextButton"
-          onClick={() => {
-            setPage(Number(page) + 1);
-          }}
-        >
-          次へ
-        </button>
+        <div className="pagination-item">
+          <button
+            id="prevButton"
+            className={page >= 1 ? "open" : "close"}
+            onClick={() => {
+              setPage(Number(page) - 1);
+            }}
+          >
+            前へ
+          </button>
+        </div>
+        <div className="pagination-item">
+          <p id="pageNum">{page}</p>
+        </div>
+        <div className="pagination-item">
+          <button
+            id="nextButton"
+            onClick={() => {
+              setPage(Number(page) + 1);
+            }}
+          >
+            次へ
+          </button>
+        </div>
       </div>
     </div>
   );
