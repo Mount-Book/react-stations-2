@@ -28,11 +28,12 @@ export const Thread = () => {
   return (
     <>
       <Header />
-      <h1>{title}</h1>
+      <h1 className="pageTitle">{title}</h1>
       <input
         placeholder="投稿しよう！"
         type="text"
         value={post}
+        id="postTextBox"
         onChange={onChangeText}
       ></input>
       <button
