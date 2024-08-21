@@ -9,8 +9,45 @@
   background-color: rgb(200, 200, 200);
 }
 
+.threadButton {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+}
+
 .thread p {
   font-size: 24px;
   margin: 5px auto auto 5px;
   height: 7.5vh;
+}
+
+.pageButton {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  margin: 10px;
+}
+
+.pagination-item {
+  width: 30%;
+  margin: 0 auto;
+}
+
+#pageNum {
+  font-size: 24px;
+}
+
+#nextButton,
+#prevButton {
+  font-size: 24px;
+  margin: 3px;
+  width: 60%;
+  height: 75%;
+  background-color: rgb(66, 142, 255);
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+.close {
+  display: none;
 }

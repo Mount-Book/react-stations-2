@@ -43,3 +43,7 @@ button {
   margin: auto 0 auto auto;
   color: #ffffff;
 }
+
+.pageTitle {
+  margin: 10px;
+}

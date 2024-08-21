@@ -7,7 +7,7 @@ export const Home = () => {
   return (
     <div>
       <Header />
-      <h1>新着スレッド</h1>
+      <h1 className="pageTitle">新着スレッド</h1>
       <div>
         <ThreadListView />
       </div>

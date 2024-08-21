@@ -11,7 +11,7 @@ export const CreateThread = () => {
   return (
     <div className="createThreadPage">
       <Header />
-      <h1>スレッド新規作成</h1>
+      <h1 className="pageTitle">スレッド新規作成</h1>
       <input
         type="text"
         placeholder="スレッドタイトル"
@@ -28,9 +28,10 @@ export const CreateThread = () => {
         </button>
         <button
           id="newThread"
-          onClick={() => {
+          onClick={async () => {
             if (title) {
-              PostNewThread(title);
+              await PostNewThread(title);
+              nav("/");
             }
           }}
         >
